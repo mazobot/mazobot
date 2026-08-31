@@ -28,7 +28,7 @@ h1, h2, p {
             rgba(0, 0, 0, 0.35),
             rgba(0, 0, 0, 0.35)
         ),
-        url("memes.png");
+        url("strona/memes.png");
 
     background-size: 100% 100%;
     background-position: center;
@@ -82,7 +82,7 @@ h1, h2, p {
             rgba(0, 0, 0, 0.35),
             rgba(0, 0, 0, 0.35)
         ),
-        url("map.webp");
+        url("strona/map.webp");
 
     background-size: 100% 100%;
     background-position: center;
@@ -428,7 +428,79 @@ h1, h2, p {
     font-size: 16px;
 }
 
+#accessdenied-screen {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    background-image: url("strona/error.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    padding: 40px;
+    min-width: 280px;
+    min-height: 160px;
+    border-radius: 12px;
+    text-align: center;
+    font-size: 24px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
+#accessdenied-screen[hidden] {
+    display: none;
+}
+
+.dead-screen, .kicked-screen {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    padding: 40px;
+    min-width: 280px;
+    min-height: 160px;
+    border-radius: 12px;
+    text-align: center;
+    font-size: 24px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.dead-screen {
+    inset: auto;
+    bottom: 23%;
+    left: 50%;
+    width: min(760px, calc(100vw - 40px));
+    height: min(220px, calc(100vh - 48px));
+    transform: translateX(-50%);
+    background-image: url("strona/sad.webp");
+    background-size: contain;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1001;
+}
+
+.kicked-screen {
+    top: 24px;
+    bottom: auto;
+    height: min(220px, calc(100vh - 48px));
+    background-image: url("strona/Kick.webp");
+    background-size: contain;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1002;
+}
+
+.dead-screen[hidden], .kicked-screen[hidden] {
+    display: none;
+}
 /* TASKBAR */
 
 #taskbar {
@@ -464,3 +536,38 @@ h1, h2, p {
     cursor: pointer;
 }
 
+#easter-egg {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    text-align: center;
+    z-index: 2000;
+}
+
+#easter-egg[hidden] {
+    display: none;
+}
+
+#easter-egg img {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+}
+
+#easteregg-button {
+    font-size: 25px;
+
+    background-image: url("strona/among-us.png");
+
+    border: none;
+
+    color: black;
+
+    cursor: pointer;
+}
