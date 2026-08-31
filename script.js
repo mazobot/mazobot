@@ -22,6 +22,10 @@ function logout() {
     document.querySelectorAll(".app-window").forEach(windowEl => {
         windowEl.hidden = true;
     });
+
+    document.getElementById("accessdenied-screen").hidden = true;
+    document.getElementById("dead").hidden = true;
+    document.getElementById("kicked").hidden = true;
 }
 
 function openApp(id) {
@@ -49,7 +53,7 @@ function getNextZIndex() {
         }
     });
 
-    return currentMax + 1;
+    return currentMax + 1;``
 }
 
 function randomizeSusIcon() {
@@ -62,15 +66,29 @@ function randomizeSusIcon() {
     susIcon.style.top = `${top}%`;
 }
 
+function maybeShowEasterEgg(chance = 0.2) {
+    const easterEgg = document.getElementById("easter-egg");
+    if (!easterEgg || !easterEgg.hidden || loginLocked) return;
+
+    if (Math.random() < chance) {
+        easterEgg.hidden = false;
+        setTimeout(() => {
+            easterEgg.hidden = true;
+        }, 2500);
+    }
+}
+
 loginButton.addEventListener("click", function() {
     if (loginLocked) return;
 
     randomizeSusIcon();
+    maybeShowEasterEgg(0.3);
     loginScreen.style.display = "none";
     desktop.style.display = "block";
 });
 
 document.querySelector(".sus-icon").addEventListener("click", function() {
+    maybeShowEasterEgg(0.5);
     startPopupLoop();
 });
 
@@ -161,11 +179,11 @@ function createFloatingPopup() {
     if (!popupLayer) return;
 
     const messages = [
-        { title: "Alert", text: "You are being watched...", image: "jak.webp", imageSize: "52px" },
-        { title: "Sus", text: "The desktop is not safe.", image: "jak.webp", imageSize: "70px" },
-        { title: "Warning", text: "Something is moving behind the screen.", image: "jak.webp", imageSize: "60px" },
-        { title: "Baka", text: "You have been susy baka'd.", image: "jak.webp", imageSize: "75px"}, 
-        { title: "System", text: "Another anihilation has occurred.", image: "jak.webp", imageSize: "48px" }
+        { title: "Alert", text: "You are being watched...", image: "strona/jak.webp", imageSize: "52px" },
+        { title: "Sus", text: "The desktop is not safe.", image: "strona/jak.webp", imageSize: "70px" },
+        { title: "Warning", text: "Something is moving behind the screen.", image: "strona/jak.webp", imageSize: "60px" },
+        { title: "Baka", text: "You have been susy baka'd.", image: "strona/jak.webp", imageSize: "75px"}, 
+        { title: "System", text: "Another anihilation has occurred.", image: "strona/jak.webp", imageSize: "48px" }
     ];
 
     const item = messages[Math.floor(Math.random() * messages.length)];
@@ -293,6 +311,9 @@ function lockLogin() {
     document.querySelectorAll(".floating-popup").forEach(popup => popup.remove());
     desktop.style.display = "none";
     loginScreen.style.display = "flex";
+    AccessDenied();
+    Dead();
+    Kicked();
     loginButton.disabled = true;
     loginButton.textContent = "Access denied";
 }
@@ -463,6 +484,46 @@ function handleCalculatorButtonClick(event) {
 document.querySelectorAll('.calculator-btn').forEach(button => {
     button.addEventListener('click', handleCalculatorButtonClick);
 });
+function AccessDenied() {
+    const accessDeniedScreen = document.getElementById("accessdenied-screen");
+    if (accessDeniedScreen) {
+        accessDeniedScreen.hidden = false;
+    }
+    else {
+        console.error("Access Denied screen element not found.");
+    }
+}
+
+function Dead() {
+    const deadScreen = document.getElementById("dead");
+    if (deadScreen) {
+        deadScreen.hidden = false;
+    }
+    else {
+        console.error("Dead screen element not found.");
+    }
+}
+
+function Kicked() {
+    const kickedScreen = document.getElementById("kicked");
+    if (kickedScreen) {
+        kickedScreen.hidden = false;
+    }
+    else {
+        console.error("Kicked screen element not found.");
+    }
+}
+function showEasterEgg() {
+    const easterEggScreen = document.getElementById("easter-egg");  
+    if (easterEggScreen) {
+        easterEggScreen.hidden = false;
+    }
+    else {
+        console.error("Easter Egg screen element not found.");
+    }
+}
+
+
 
 updateClock();
 setInterval(updateClock, 1000);
