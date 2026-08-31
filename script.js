@@ -82,7 +82,7 @@ loginButton.addEventListener("click", function() {
     if (loginLocked) return;
 
     randomizeSusIcon();
-    maybeShowEasterEgg(0.3);
+    maybeShowEasterEgg(1);
     loginScreen.style.display = "none";
     desktop.style.display = "block";
 });
