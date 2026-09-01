@@ -1,15 +1,30 @@
-## why there 👋
-It is my first project so I have no idea if it meets some standarts and I hope you will have fun.
-It is a Web os and made for stardance and it has some uniqe features.
-I used ai for most java because I am too dumb for this.
+# Web OS 🖥️
+A browser-based Web OS created as my first bigger web development project.
 
+## 👋 Why this project?
+This is my first bigger project, so I wanted to experiment and see how far I could push HTML, CSS and JavaScript.
+The idea was to create an operating system-like environment that runs directly in a web browser.
+It isn't meant to replace a real operating system. It's a fun project focused on experimenting with UI, JavaScript, animations and interactive applications.
 
-Hmmm once 
-Once?I was in a room a very white room
-Room? yes they put me there and tried to ask questions
-Questions? I hate questions I dont know the anser It was sus
-Sus? I was sus once in a room with impostors 
-Impostors?They tried to stab me in a back
-Back?When I need to make os with no another choice
-Choice?What choice I didnt have a choice once 
-Once?I was in a room a very white room
+## ✨ Features
+- 🖥️ Desktop-style interface
+- 🪟 Draggable and interactive windows
+- 📱 Applications
+- 🧮 Calculator
+- 🎮 Interactive events
+- 👾 Among Us themed elements
+- 🎨 Custom UI
+- ⚡ Runs directly in the browser
+- 🌐 No installation required
+
+## 🛠️ Technologies
+The project currently uses:
+- HTML
+- CSS
+- JavaScript
+
+## 📁 Project structure
+strona/
+├── index.html
+├── style.css
+└── script.js
