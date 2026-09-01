@@ -1,9 +1,9 @@
 ## why there 👋
 It is my first project so I have no idea if it meets some standarts and I hope you will have fun.
 It is a Web os and made for stardance and it has some uniqe features.
-I used ai for most java because I am too dumb for this
+I used ai for most java because I am too dumb for this.
 
-.
+
 Hmmm once 
 Once?I was in a room a very white room
 Room? yes they put me there and tried to ask questions
